@@ -1,0 +1,42 @@
+<div class="contact-view">
+    <div class="contact-actions">
+        <a [routerLink]="['/contacts']">
+            <img src="assets/back.png">
+        </a>
+        <div class="name">{{contact.FirstName}} {{contact.LastName}}</div>
+        <app-favorite-icon [(value)]="favorite"></app-favorite-icon>
+        <a>
+            <img src="assets/edit.png" class="edit" [routerLink]="['/contact', contact.ID, 'edit']">
+        </a>
+    </div>
+    <app-profile-photo [(value)]="contact.Image"></app-profile-photo>
+
+</div>
+
+<div class="contact-details ">
+    <div class="row divider">
+        <div class="label">
+            <label>
+                <img src="assets/mail.png">email:
+            </label>
+        </div>
+        <div class="email">
+            <a href="mailto:{{contact.Email}}">{{contact.Email}}</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="label">
+            <label>
+                <img src="assets/phone.png">numbers
+            </label>
+        </div>
+        <div class="phones">
+            <div *ngFor="let phone of contact.Phones; let i = index" class="phone-row">
+                <div class="phone-label">{{phone.label}}</div>
+                <div class="phone-number">
+                    <a class="phone-number" href="tel:{{phone.number}}">{{phone.number}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

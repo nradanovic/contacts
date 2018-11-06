@@ -1,0 +1,12 @@
+<app-filter [filter]=searchObservable></app-filter>
+
+<div class="contact-list">
+
+  <div class="contact-card" *ngIf="showNewContactCard" [routerLink]="['/contact', 'new']">
+    <span class="add-icon">+</span>
+    <span>Add new</span>
+  </div>
+
+  <app-contact-card *ngFor="let contact of contactListObservable | async trackBy:trackByIdx" [contact]="contact"></app-contact-card>
+
+</div>

@@ -1,0 +1,42 @@
+@import 'variables.scss';
+
+.favorites-filter {
+	display: flex;
+	justify-content: center;
+	border-bottom: 2px solid $primary-color;
+	padding: 20px;
+	user-select: none;
+	.favorites-filter-tab {
+		padding: 15px;
+		font-weight: 600;
+		font-size: 1.4em;
+		cursor: pointer;
+		&.active {
+			color: $primary-color;
+		}
+		&:not(:last-child) {
+			border-right: 1px solid #e4e7e7;
+		}
+	}
+}
+
+.contact-search {
+	display: flex;
+	justify-content: center;
+	padding: 40px 0;
+	align-items: center;
+	.search-icon {
+		height: 20px;
+		width: auto;
+		margin-right: -50px;
+		z-index: 10;
+	}
+	input {
+		width: 400px;
+		border-radius: 5px;
+		box-shadow: 0 0 40px #e4e4e4;
+		border: 1px solid #e4e7e7;
+		padding: 15px 15px 15px 40px;
+		font-size: 1.4em;
+	}
+}

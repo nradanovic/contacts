@@ -1,0 +1,65 @@
+<div class="contact-edit">
+    <div class="contact-actions">
+        <a [routerLink]="['/contacts']">
+            <img src="assets/back.png">
+        </a>
+        <a class="delete-action" (click)="deleteContact()">
+            <span>Delete</span>
+            <img src="assets/delete.png" class="delete">
+        </a>
+    </div>
+    <app-profile-photo [(value)]="contact.Image" editMode></app-profile-photo>
+
+</div>
+
+<form (ngSubmit)="onFormSubmit(contactForm)" #contactForm="ngForm">
+    <div class="section divider">
+        <label>
+            <img src="assets/user.png"> full Name:
+        </label></div>
+    <div class="row">
+        <input type="text" [(ngModel)]="contact.FirstName" required name="firstName" #firstName="ngModel" placeholder="first name">
+        <input type="text" [(ngModel)]="contact.LastName" required name="lastName" #lastName="ngModel" placeholder="last name">
+
+    </div>
+    <div class="row">
+        <span [hidden]="firstName.valid || firstName.pristine" class="validator-label">
+            First name is required
+        </span>
+        <span [hidden]="lastName.valid || lastName.pristine" class="validator-label">
+            Last name is required
+        </span>
+    </div>
+    <div class="section divider">
+        <label>
+            <img src="assets/mail.png"> email:
+        </label>
+    </div>
+    <div class="row">
+        <input type="text" [(ngModel)]="contact.Email" name="email" placeholder="email">
+    </div>
+    <div class="section divider">
+        <label>
+            <img src="assets/phone.png"> numbers
+        </label>
+    </div>
+    <div class="row phones">
+        <div *ngFor="let phone of contact.Phones; let i = index" class="numbers-row">
+            <input type="text" [(ngModel)]="phone.label" [name]="'label'+i" placeholder="phone label">
+            <div class="phone-row">
+                <input type="text" [(ngModel)]="phone.number" [name]="'number'+i" type="tel" placeholder="+123 45 567 890">
+                <button (click)="removeNumber(i)" class="form-button delete">x</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <label for="addPhone">
+            <button type="button" (click)="addNumber()" class="form-button add" name="addPhone">+</button>
+            Add number
+        </label>
+    </div>
+    <div class="actions">
+        <button type="button" (click)="cancel()">Cancel</button>
+        <button type="submit">Save</button>
+    </div>
+</form>

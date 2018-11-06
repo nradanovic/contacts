@@ -1,0 +1,55 @@
+@import 'variables.scss';
+
+:host {
+	padding: 10px;
+}
+
+.overlay-image {
+	border-radius: 500px;
+	height: 180px;
+	width: 180px;
+	background-color: #7d7c7c;
+	border: 3px solid $border-color;
+	margin: auto;
+	.text {
+		opacity: 0;
+	}
+	.image {
+		border: none;
+	}
+	&:hover {
+		.image {
+			opacity: 0.8;
+		}
+		.text {
+			opacity: 1;
+			display: block;
+			color: #fff;
+			font-size: 30px;
+			line-height: 1.5em;
+			text-align: center;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, -250%);
+			width: 100%;
+		}
+	}
+}
+label {
+	padding: 0;
+	display: flex;
+}
+.image {
+	border: 3px solid $border-color;
+	transition: opacity 0.3s;
+	margin-left: auto;
+	border-radius: 500px;
+	height: 180px;
+	width: 180px;
+	padding: 0;
+	margin: auto;
+	display: flex;
+}
+#file-input {
+	display: none;
+}

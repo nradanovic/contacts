@@ -1,0 +1,29 @@
+.modal-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	z-index: 10;
+	.modal {
+		margin: auto;
+		background: white;
+		border-radius: 5px;
+		align-self: center;
+		.title {
+			padding: 20px;
+			border-bottom: 1px solid black;
+		}
+		.message {
+			padding: 40px 20px;
+			text-align: center;
+		}
+		.actions {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<div class="favorites-filter">
+  <div class="favorites-filter-tab" (click)="setFilter(Filters.All)" [ngClass]="{'active': FilterType === Filters.All}">
+    <span>All contacts</span>
+  </div>
+  <div class="favorites-filter-tab" (click)="setFilter(Filters.Favorites)" [ngClass]="{'active': FilterType === Filters.Favorites}">
+    <span>My favorites</span>
+  </div>
+</div>
+
+<div class="contact-search">
+  <img src="assets/search.png" class="search-icon">
+  <input type="search" id="search" [formControl]="searchControl">
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="editMode">
+    <div *ngIf="!value">
+        <label for="file-input">
+            <img class="image" [src]="imagePlaceholder">
+        </label>
+        <input id="file-input" type="file" accept="image/*" (change)="fileChange($event)">
+    </div>
+    <div *ngIf="value">
+        <div class="overlay-image" (click)="removePhoto()">
+            <img class="image" [src]="value">
+            <div class="text">X</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!editMode">
+    <img *ngIf="value" class="image" [src]="value">
+    <img *ngIf="!value" class="image" [src]="imagePlaceholder">
+</div>

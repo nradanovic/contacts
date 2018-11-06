@@ -1,0 +1,79 @@
+@import 'variables.scss';
+.contact-card {
+	width: 250px;
+	height: 150px;
+	border: 1px solid $border-color;
+	border-radius: 5px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+	&:hover {
+		border: 1px solid $primary-color;
+	}
+	.action-btn {
+		cursor: pointer;
+		width: 15px;
+		padding: 10px 10px 0 10px;
+	}
+	a:nth-child(2) {
+		margin-left: auto;
+	}
+	.actions {
+		display: flex;
+		width: 100%;
+	}
+	.contact-card-info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+		flex: 1 0 0%;
+		.profile-photo {
+			display: flex;
+			.picture {
+				width: 60px;
+				height: 60px;
+				margin: 10px;
+				border: 3px solid $border-color;
+				border-radius: 500px;
+				margin: auto;
+			}
+			img {
+				padding: 0;
+			}
+		}
+		.name {
+			width: 100%;
+			font-size: 1.2em;
+			text-align: center;
+			color: $font-color;
+			padding: 20px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.contact-card {
+		height: 60px;
+		width: auto;
+		flex-direction: row-reverse;
+		.actions {
+			width: auto;
+		}
+		.contact-card-info {
+			flex-direction: row;
+			.profile-photo {
+				width: 100px;
+				.picture {
+					width: 40px;
+					height: 40px;
+				}
+			}
+			.name {
+				text-align: left;
+			}
+		}
+	}
+}

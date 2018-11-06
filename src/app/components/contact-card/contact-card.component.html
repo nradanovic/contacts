@@ -1,0 +1,17 @@
+<div class="contact-card">
+  <div class="actions">
+    <app-favorite-icon [(value)]="favorite"></app-favorite-icon>
+    <a><img src="assets/edit.png" class="action-btn" [routerLink]="['/contact', contact.ID, 'edit']"></a>
+    <a><img src="assets/delete.png" class="action-btn" id="deleteBtn" (click)="delete()"></a>
+
+  </div>
+  <a class="contact-card-info" [routerLink]="['/contact', contact.ID]">
+    <div class="profile-photo">
+      <img *ngIf="contact.Image" class="picture" [src]="contact.Image">
+      <img *ngIf="!contact.Image" class="picture" [src]="imagePlaceholder">
+    </div>
+    <div class="name">
+      <span>{{contact.FirstName}} {{contact.LastName}}</span>
+    </div>
+  </a>
+</div>
